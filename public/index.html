@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>נעם לישראל · חמ״ל מבצעי ויעדי קמפיין</title>
+  <meta name="description" content="לוח בקרה וחמ״ל יעדים למפלגת נעם לישראל בראשות אבי מעוז - מעקב וחלוקת לידים">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=78">
+</head>
+
+<body>
+  <div class="app-container">
+    <!-- TOP HEADER WITH LARGE CAMPAIGN LOGO -->
+    <header class="top-brand-header">
+      <div class="logo-showcase-group">
+        <img src="logo.png" alt="נעם לישראל בראשות אבי מעוז" class="large-campaign-logo">
+        <div class="header-vertical-divider"></div>
+        <div class="campaign-tagline">
+          <h1>
+            חמ״ל מצפה רמון
+
+            <span class="live-badge">פעיל בלייב</span>
+          </h1>
+        </div>
+        <div class="header-vertical-divider"></div>
+        <a href="https://www.noamlisrael.org.il/" target="_blank" rel="noopener noreferrer" class="slogan-logo-link"
+          title="מעבר לאתר נעם לישראל - noamlisrael.org.il">
+          <img src="חופשי.jpeg" alt="חופשי להיות יהודי - לאתר נעם לישראל" class="slogan-logo">
+        </a>
+      </div>
+
+      <div class="header-actions">
+        <!-- ELECTION COUNTDOWN -->
+        <div class="election-countdown-wrap" title="ספירה לאחור ליום הבחירות - 27 באוקטובר 2026">
+          <div class="countdown-label"> יום הבחירות בעוד:</div>
+          <div class="countdown-timer" id="electionCountdown">
+            <span class="cd-unit"><span id="cdDays">--</span><small>ימים</small></span>
+            <span class="cd-sep">:</span>
+            <span class="cd-unit"><span id="cdHours">--</span><small>שעות</small></span>
+            <span class="cd-sep">:</span>
+            <span class="cd-unit"><span id="cdMinutes">--</span><small>דקות</small></span>
+            <span class="cd-sep">:</span>
+            <span class="cd-unit"><span id="cdSeconds">--</span><small>שניות</small></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- FLOATING SIDE TOOLS (RIGHT SIDE, VERTICALLY CENTERED, OUTSIDE THE CONTAINER FRAME) -->
+    <aside class="floating-side-tools" aria-label="אגף מנהל">
+      <!-- ADMIN WING BUTTON (PROTECTED BY PASSWORD) -->
+      <button id="btnAdminWing" class="floating-tool-btn floating-admin-btn" title="אגף מנהל" aria-label="אגף מנהל">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+          <path d="M2 17l10 5 10-5"></path>
+          <path d="M2 12l10 5 10-5"></path>
+        </svg>
+        <span class="floating-tool-tooltip">אגף מנהל</span>
+      </button>
+    </aside>
+
+    <!-- HERO ROTATING PANEL -->
+    <div class="hero-rotator" id="heroRotator">
+
+      <!-- SLIDE 1: TARGETS HERO BANNER -->
+      <div class="hero-slide hero-slide--active" id="heroSlideTargets">
+        <section class="targets-hero-panel">
+          <div class="targets-header-row">
+            <div class="targets-headline">
+              <h2>🎯 יעדי קמפיין נעם לישראל</h2>
+              <p>מעקב התקדמות ויעדים בזמן אמת עבור קבוצת מדברה כעדן</p>
+            </div>
+            <div class="progress-pill-status">
+              <span id="targetPercentBadge">0%</span>
+              <span>הושלם</span>
+            </div>
+          </div>
+          <div class="progress-meter-wrap">
+            <div class="progress-header-labels">
+              <span class="curr-progress-txt" id="progressCurrentLabel">0 תומכים גויסו</span>
+              <span class="target-goal-txt" id="progressTargetLabel">יעד: 50 תומכים</span>
+            </div>
+            <div class="progress-track-bar">
+              <div class="progress-fill-bar" id="mainProgressBar" style="width: 0%;"></div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- SLIDE 2: TOP 5 AGENTS -->
+      <div class="hero-slide" id="heroSlideTop5">
+        <section class="top-agents-section" aria-label="חמישייה פותחת">
+          <div class="hero-slide-header">
+            <span class="filter-chip active" id="top5Badge">דירוג בזמן אמת</span>
+            <span class="hero-slide-title-center">⭐ חמישייה פותחת - מובילי גיוס התומכים בקמפיין</span>
+          </div>
+          <div class="top-agents-grid" id="topAgentsGrid">
+            <!-- Rendered dynamically by JavaScript -->
+          </div>
+        </section>
+      </div>
+
+      <!-- SLIDE 3: HOURLY & REAL-TIME CHARTS -->
+      <div class="hero-slide" id="heroSlideCharts">
+        <section class="charts-hero-panel" aria-label="גרפי מעקב תומכים">
+          <div class="hero-charts-grid">
+            <!-- Box 1: Daily by Hours (Strictly Today) -->
+            <div class="hero-chart-card">
+              <div class="hero-chart-header">
+                <div class="hero-chart-title">
+                  <span class="live-dot-pulse"></span>
+                  <h4>התפלגות תומכים היום לפי שעות</h4>
+                </div>
+                <span class="hero-chart-badge badge-green" id="hourlyChartBadge">0 תומכים היום</span>
+              </div>
+              <div class="hero-chart-body" id="hourlyChartContainer">
+                <!-- Injected via SVG by JS -->
+              </div>
+            </div>
+
+            <!-- Box 2: Last Hour by Minutes -->
+            <div class="hero-chart-card">
+              <div class="hero-chart-header">
+                <div class="hero-chart-title">
+                  <span class="live-dot-pulse"></span>
+                  <h4>קצב תמיכה בשעה האחרונה</h4>
+                </div>
+                <span class="hero-chart-badge badge-green" id="recentChartBadge">זמן אמת</span>
+              </div>
+              <div class="hero-chart-body" id="recentChartContainer">
+                <!-- Injected via SVG by JS -->
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- SLIDE 4: ACTIVE RABBIS (רבנים פעילים) -->
+      <div class="hero-slide" id="heroSlideRabbis">
+        <section class="rabbis-hero-panel" aria-label="רבנים פעילים">
+          <div class="hero-slide-header">
+            <span class="filter-chip active" id="rabbisActiveCountBadge">0 רבנים פעילים</span>
+            <div style="text-align: center;">
+              <span class="hero-slide-title-center">רבנים פעילים</span>
+              <span class="rabbis-headline-sub">מעקב אחר רבנים המחוברים ופעילים בקמפיין</span>
+            </div>
+          </div>
+          <div class="rabbis-cards-grid" id="rabbisCardsGrid">
+            <!-- Rendered dynamically by JavaScript -->
+          </div>
+        </section>
+      </div>
+
+      <!-- SLIDE 5: TOP 5 APARTMENTS (חמישייה פותחת - דירות) -->
+      <div class="hero-slide" id="heroSlideTopApartments">
+        <section class="top-agents-section" aria-label="חמישייה פותחת דירות">
+          <div class="hero-slide-header">
+            <span class="filter-chip active" id="topAptsBadge"
+              style="background:#ecfdf5;color:#047857;border-color:#a7f3d0;">דירוג דירות</span>
+            <span class="hero-slide-title-center">🏠 חמישייה פותחת - הדירות המובילות בגיוס תומכים</span>
+          </div>
+          <div class="top-agents-grid" id="topApartmentsGrid">
+            <!-- Rendered dynamically by JavaScript -->
+          </div>
+        </section>
+      </div>
+
+      <!-- SLIDE 6: TOP 3 CLASSES (שלישייה פותחת - שיעורים) -->
+      <div class="hero-slide" id="heroSlideTopClasses">
+        <section class="top-agents-section" aria-label="שלישייה פותחת שיעורים">
+          <div class="hero-slide-header">
+            <span class="filter-chip active" id="topClassesBadge"
+              style="background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe;">דירוג שיעורים</span>
+            <span class="hero-slide-title-center">📚 שלישייה פותחת - השיעורים המובילים בגיוס תומכים</span>
+          </div>
+          <div class="top-classes-grid" id="topClassesGrid">
+            <!-- Rendered dynamically by JavaScript -->
+          </div>
+        </section>
+      </div>
+
+      <!-- Dot indicators -->
+      <div class="hero-dots" id="heroDots">
+        <button class="hero-dot hero-dot--active" data-slide="0" aria-label="יעדי קמפיין"></button>
+        <button class="hero-dot" data-slide="1" aria-label="חמישיית נציגים"></button>
+        <button class="hero-dot" data-slide="2" aria-label="גרפי תמיכה"></button>
+        <button class="hero-dot" data-slide="3" aria-label="רבנים פעילים"></button>
+        <button class="hero-dot" data-slide="4" aria-label="חמישיית דירות"></button>
+        <button class="hero-dot" data-slide="5" aria-label="חמישיית שיעורים"></button>
+      </div>
+
+    </div><!-- /hero-rotator -->
+
+    <!-- COLORFUL RESULTS SUMMARY ROW (MATCHING ADMIN DASHBOARD) -->
+    <section class="colorful-results-row">
+      <div class="colorful-row-header">
+        <span class="colorful-row-title">תוצאות וסקירת תמיכה בקמפיין</span>
+        <span class="filter-chip active" id="lastSyncStamp">מעודכן ל-עכשיו</span>
+      </div>
+      <div id="colorfulResultsContainer">
+        <div class="overview-kpi-grid">
+          <div class="overview-result-card card-supporter">
+            <div class="result-header">
+              <span class="result-title">תומך</span>
+              <span class="result-tag tag-green">תמיכה מלאה</span>
+            </div>
+            <div class="result-number" id="overviewSupporters">12</div>
+          </div>
+
+          <div class="overview-result-card card-threshold">
+            <div class="result-header">
+              <span class="result-title">תומכי אחוז חסימה</span>
+              <span class="result-tag tag-blue">תמיכה מותנית</span>
+            </div>
+            <div class="result-number" id="overviewThreshold">18</div>
+          </div>
+
+          <div class="overview-result-card card-hesitant">
+            <div class="result-header">
+              <span class="result-title">מתלבט</span>
+              <span class="result-tag tag-orange">בתהליך שכנוע</span>
+            </div>
+            <div class="result-number" id="overviewHesitant">0</div>
+          </div>
+
+          <div class="overview-result-card card-support-rate">
+            <div class="result-header">
+              <span class="result-title">תמיכה מתוך העונים</span>
+              <span class="result-tag tag-purple">תומך + אחוז חסימה + מתלבט</span>
+            </div>
+            <div class="result-number" id="overviewSupportRate" style="color: #6d28d9;">0%</div>
+            <div class="result-footer" id="overviewSupportRateSub"
+              style="color: #6d28d9; font-weight: 700; font-size: 0.88rem;">ממתין לנתוני מענה</div>
+          </div>
+
+          <div class="overview-result-card card-no-answer">
+            <div class="result-header">
+              <span class="result-title">אין מענה / אחר</span>
+              <span class="result-tag tag-amber">ממתין לבירור</span>
+            </div>
+            <div class="result-number" id="overviewNoAnswer">201</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REAL CAMPAIGN METRICS (MATCHING SOURCE ADMIN) -->
+    <section class="real-stats-row">
+      <div class="stat-metric-card">
+        <div class="stat-card-header">
+          <span class="stat-card-title">הנציגים שלך בקמפיין</span>
+          <div class="stat-icon-wrapper navy">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+            </svg>
+          </div>
+        </div>
+        <div class="stat-card-number" id="kpiAgentsCount">12 / 15</div>
+        <div class="stat-card-footer" id="targetAgentsSub">יעד: 15 פעילים (מתוך 29 סה״כ)</div>
+      </div>
+
+      <div class="stat-metric-card">
+        <div class="stat-card-header">
+          <span class="stat-card-title">פעלו בחצי השעה האחרונה</span>
+          <div class="stat-icon-wrapper green">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+        </div>
+        <div class="stat-card-number" id="kpiActiveRecently">3</div>
+        <div class="stat-card-footer">נציגים פעילים כרגע</div>
+      </div>
+
+      <div class="stat-metric-card heartbeat-card" id="cardCallsToday">
+        <div class="stat-card-header">
+          <span class="stat-card-title">שיחות היום</span>
+          <div class="stat-icon-wrapper amber">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+              </path>
+            </svg>
+          </div>
+        </div>
+        <div class="stat-card-number" id="kpiCallsToday">0 / 100</div>
+        <div class="stat-card-footer" id="targetDailyPercent">0% מהיעד היומי</div>
+      </div>
+
+      <div class="stat-metric-card">
+        <div class="stat-card-header">
+          <span class="stat-card-title">שיחות מתחילת הקמפיין</span>
+          <div class="stat-icon-wrapper blue">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 20V10"></path>
+              <path d="M12 20V4"></path>
+              <path d="M6 20v-6"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="stat-card-number" id="kpiCallsTotal">442</div>
+        <div class="stat-card-footer">סה״כ שיחות מצטבר</div>
+      </div>
+    </section>
+
+    <!-- NAVIGATION TABS -->
+    <nav class="nav-tab-container" role="tablist">
+      <button class="tab-nav-btn active" data-tab="tab-leads">
+        👥 אנשי קשר (471)
+      </button>
+      <button class="tab-nav-btn" data-tab="tab-agents">
+        🏆 נציגים
+      </button>
+    </nav>
+
+    <!-- TAB 2: CONTACTS & LEADS -->
+    <section id="tab-leads" class="tab-pane-view active">
+      <div class="main-content-card">
+        <div class="card-top-bar">
+          <h2 class="card-heading">אנשי קשר ולידים</h2>
+          <div class="filter-chips-row" id="leadStatusChips">
+            <button class="filter-chip active" data-filter="all">הכל</button>
+            <button class="filter-chip" data-filter="waiting">ממתין</button>
+            <button class="filter-chip" data-filter="in_progress">בטיפול</button>
+            <button class="filter-chip" data-filter="callback">חזרה מתוכננת</button>
+            <button class="filter-chip" data-filter="completed">הושלם</button>
+          </div>
+        </div>
+
+        <div class="search-bar-wrap">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="leadsSearchInput" class="search-input-field" placeholder="חיפוש לפי שם או טלפון...">
+        </div>
+
+        <div class="empty-state-card" id="leadsEmptyBox">
+          <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+            <line x1="7" y1="8" x2="17" y2="8"></line>
+            <line x1="7" y1="12" x2="17" y2="12"></line>
+            <line x1="7" y1="16" x2="12" y2="16"></line>
+          </svg>
+          <h3>עדיין אין אנשי קשר (0)</h3>
+          <p>מוצגים רק אנשי הקשר שהנציגים בקבוצות שלך טיפלו בהם.</p>
+        </div>
+
+        <div class="table-responsive-box" id="leadsTableContainer" style="display: none;">
+          <table class="clean-table" id="leadsTable">
+            <thead>
+              <tr>
+                <th data-col="name">שם</th>
+                <th data-col="phone">טלפון</th>
+                <th data-col="status">סטטוס</th>
+                <th data-col="result">תוצאה</th>
+                <th data-col="note">הערה</th>
+                <th data-col="attempts">ניסיונות</th>
+                <th data-col="last_agent">נציג אחרון</th>
+                <th data-col="updated">עודכן</th>
+              </tr>
+            </thead>
+            <tbody id="leadsTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: AGENTS (REAL LIVE AGENTS DATA) -->
+    <section id="tab-agents" class="tab-pane-view" style="display: none;">
+      <div class="main-content-card">
+        <div class="card-top-bar">
+          <h2 class="card-heading">נציגים בקמפיין</h2>
+          <div class="search-bar-wrap agents-search-wrap">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="agentsSearchInput" class="search-input-field"
+              placeholder="חיפוש נציג לפי שם או טלפון...">
+            <button type="button" id="btnClearAgentsSearch" class="search-clear-btn" style="display: none;"
+              title="נקה חיפוש" aria-label="נקה חיפוש">✕</button>
+          </div>
+          <div class="filter-chips-row" id="agentRangeChips">
+            <button class="filter-chip active" data-range="today">היום</button>
+            <button class="filter-chip" data-range="7days">7 ימים</button>
+            <button class="filter-chip" data-range="all">מההתחלה</button>
+          </div>
+        </div>
+
+        <div class="table-responsive-box">
+          <table class="clean-table" id="agentsTable">
+            <thead>
+              <tr>
+                <th data-col="agent_name">נציג</th>
+                <th data-col="agent_phone">טלפון</th>
+                <th data-col="agent_group">קבוצה</th>
+                <th data-col="agent_account">חשבון אצל השותף</th>
+                <th data-col="agent_status">מצב</th>
+                <th data-col="leads_open">ליד פתוח</th>
+                <th data-col="leads_today">אנשים היום</th>
+                <th data-col="reports_count">דיווחים</th>
+                <th data-col="supporters_count">תומכים</th>
+                <th data-col="agent_target">יעד אישי</th>
+                <th data-col="avg_time">זמן ממוצע לאדם</th>
+                <th data-col="fixes">תיקונים</th>
+                <th data-col="released">שוחררו</th>
+                <th data-col="skips">דילוגים</th>
+              </tr>
+            </thead>
+            <tbody id="agentsTableBody">
+              <!-- Dynamically populated from real data -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- TARGETS EDIT MODAL -->
+  <div id="targetsModal" class="modal-overlay">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3>הגדרת יעדי קמפיין נעם לישראל</h3>
+        <button id="btnCloseTargetsModal" class="close-btn" aria-label="סגור">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- SCROLLABLE BODY -->
+      <div class="modal-body-scroll">
+        <div class="input-field-group">
+          <label for="inputTotalTarget">יעד שיחות כולל לקמפיין</label>
+          <input type="number" id="inputTotalTarget" class="modal-input" value="1000">
+        </div>
+        <div class="input-field-group">
+          <label for="inputDailyTarget">יעד שיחות יומי</label>
+          <input type="number" id="inputDailyTarget" class="modal-input" value="100">
+        </div>
+        <div class="input-field-group">
+          <label for="inputSupportersTarget">יעד תומכים (תומך + תומך אחוז חסימה + מתלבט)</label>
+          <input type="number" id="inputSupportersTarget" class="modal-input" value="50">
+        </div>
+        <div class="input-field-group">
+          <label for="inputAgentsTarget">יעד נציגים פעילים</label>
+          <input type="number" id="inputAgentsTarget" class="modal-input" value="15">
+        </div>
+
+        <!-- PERSONAL AGENT TARGETS SECTION -->
+        <div style="margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--border-light);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <h4 style="margin: 0; font-size: 0.96rem; font-weight: 800; color: var(--brand-navy);">🎯 יעדים אישיים
+              לנציגים (תומכים)</h4>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">כולל תומכי אחוז חסימה ומתלבטים</span>
+          </div>
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0 0 10px; line-height: 1.5;">
+            הגדר יעד תומכים אישי לכל נציג. היעד יופיע בטבלת הנציגים עם מד אחוזי התקדמות חיים:
+          </p>
+          <!-- Search field for quick agent finding -->
+          <div style="position: relative; margin-bottom: 10px;">
+            <input type="text" id="inputSearchAgentTargets" class="modal-input" placeholder="🔍 חיפוש נציג לפי שם..."
+              style="padding: 7px 12px; font-size: 0.88rem; width: 100%; box-sizing: border-box; border-radius: 8px;">
+          </div>
+          <div id="agentTargetsListContainer" style="display: flex; flex-direction: column; gap: 8px;">
+            <!-- Dynamically populated with all reps by JS -->
+          </div>
+        </div>
+      </div>
+      <!-- END SCROLLABLE BODY -->
+
+      <!-- FOOTER — always visible at bottom -->
+      <div class="modal-footer-fixed" style="display: flex; justify-content: space-between; align-items: center;">
+        <span id="targetsSaveNotice" style="font-size: 0.85rem; color: var(--text-muted);"></span>
+        <button id="btnSaveTargets" class="btn btn-primary">שמור יעדים</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- COLUMNS CUSTOMIZATION MODAL -->
+  <div id="columnsModal" class="modal-overlay">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3>שדות לתצוגה</h3>
+        <button id="btnCloseColumnsModal" class="close-btn" aria-label="סגור">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 16px;">
+        סמן אילו עמודות להציג בטבלאות:
+      </p>
+      <div id="columnsCheckboxList"
+        style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px;">
+        <!-- Injected by JS -->
+      </div>
+      <div style="text-align: left;">
+        <button id="btnSaveColumns" class="btn btn-primary">שמור שדות</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- COOKIE REFRESH MODAL -->
+  <div id="cookieModal" class="modal-overlay">
+    <div class="modal-window" style="max-width: 540px;">
+      <div class="modal-header">
+        <h3>🔑 עדכון חיבור לאדמין</h3>
+        <button id="btnCloseCookieModal" class="close-btn" aria-label="סגור">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div
+        style="margin-bottom: 18px; padding: 14px; background: #fff8e1; border-radius: 8px; border-right: 4px solid #f59e0b;">
+        <p style="margin: 0; font-size: 0.9rem; color: #78350f;">⚠️ הקוקי של האדמין פג. יש לעדכן אותו כדי שהסנכרון
+          יעבוד.</p>
+      </div>
+      <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 16px; line-height: 1.7;">
+        <strong>שלב 1:</strong> לחץ על הכפתור למטה לפתיחת האדמין<br>
+        <strong>שלב 2:</strong> בדפדפן, פתח DevTools (F12) ← Network ← רענן דף<br>
+        <strong>שלב 3:</strong> לחץ על כל בקשה ← Headers ← מצא <code>CF_Authorization</code><br>
+        <strong>שלב 4:</strong> העתק את הערך והדבק כאן:
+      </p>
+      <a href="https://sms-admin.talphotos.win/admin/campaigns/15" target="_blank" class="btn btn-primary"
+        style="display: inline-block; text-decoration: none; margin-bottom: 20px;">
+        פתח אתר האדמין ←
+      </a>
+      <div class="input-field-group">
+        <label for="inputCookieValue">ערך CF_Authorization (JWT token):</label>
+        <textarea id="inputCookieValue" class="modal-input" rows="4"
+          placeholder="הדבק כאן את ה-CF_Authorization token..."
+          style="font-family: monospace; font-size: 0.75rem; resize: vertical;"></textarea>
+      </div>
+      <div style="text-align: left; margin-top: 16px; display: flex; gap: 10px; justify-content: flex-start;">
+        <button id="btnSaveCookie" class="btn btn-primary">שמור ובדוק חיבור</button>
+        <button id="btnCloseCookieModal2" class="btn btn-secondary">ביטול</button>
+      </div>
+      <p id="cookieTestResult" style="margin-top: 12px; font-size: 0.875rem; color: var(--text-muted);"></p>
+    </div>
+  </div>
+
+  <!-- SOUND TEST MODAL -->
+  <div id="soundTestModal" class="modal-overlay">
+    <div class="modal-window" style="max-width: 520px;">
+      <div class="modal-header">
+        <h3>🔊 בדיקת צלילים והתראות</h3>
+        <button id="btnCloseSoundTestModal" class="close-btn" aria-label="סגור">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 18px;">
+        כאן תוכל לבדוק ולשמוע את צלילי ההתראה המותאמים אישית יחד עם ההודעות הקופצות:
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
+        <!-- Test 1: New Supporter -->
+        <div
+          style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px;">
+          <div>
+            <div style="font-weight: 700; color: #166534; font-size: 0.95rem;">🎯 תומך חדש</div>
+            <div style="font-size: 0.8rem; color: #15803d;">השמעת <code>הושג תומך.mp3</code></div>
+          </div>
+          <button id="btnTestSoundSupporter" class="btn btn-primary"
+            style="background: #16a34a; font-size: 0.85rem; padding: 6px 14px;">השמע ובדוק ▶</button>
+        </div>
+
+        <!-- Test 2: Reached 25 -->
+        <div
+          style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px;">
+          <div>
+            <div style="font-weight: 700; color: #92400e; font-size: 0.95rem;">🌟 הגעה ל-25 תומכים</div>
+            <div style="font-size: 0.8rem; color: #b45309;">השמעת <code>השיג 25 תומכים.mp3</code></div>
+          </div>
+          <button id="btnTestSound25" class="btn btn-primary"
+            style="background: #d97706; font-size: 0.85rem; padding: 6px 14px;">השמע ובדוק ▶</button>
+        </div>
+
+        <!-- Test 3: Reached 50 -->
+        <div
+          style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: #faf5ff; border: 1px solid #e9d5ff; border-radius: 10px;">
+          <div>
+            <div style="font-weight: 700; color: #6b21a8; font-size: 0.95rem;">👑 הגעה ל-50 תומכים</div>
+            <div style="font-size: 0.8rem; color: #7c3aed;">השמעת <code>צלצול של חמישים.mp3</code></div>
+          </div>
+          <button id="btnTestSound50" class="btn btn-primary"
+            style="background: #7c3aed; font-size: 0.85rem; padding: 6px 14px;">השמע ובדוק ▶</button>
+        </div>
+      </div>
+
+      <div style="text-align: left;">
+        <button id="btnCloseSoundTestModal2" class="btn btn-secondary">סגור</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RABBIS MANAGEMENT MODAL -->
+  <div id="rabbisModal" class="modal-overlay">
+    <div class="modal-window" style="max-width: 580px;">
+      <div class="modal-header">
+        <h3> ניהול רבנים פעילים</h3>
+        <button id="btnCloseRabbisModal" class="close-btn" aria-label="סגור">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 16px; line-height: 1.6;">
+        הגדר שיוך בין שם הנציג המקורי (כפי שמופיע במערכת) לשם הרב שיוצג בצג.
+        כאשר הנציג במצב <strong>פעיל</strong> (עובד בקמפיין), הרב יוצג בשורת "רבנים פעילים" עם תגית פעיל.
+      </p>
+
+      <!-- Add New Rabbi Form -->
+      <div
+        style="background: #f8fafc; border: 1px solid var(--border-light); border-radius: 12px; padding: 16px; margin-bottom: 20px;">
+        <h4 style="margin: 0 0 12px; font-size: 0.95rem; color: var(--brand-navy); font-weight: 800;">➕ הוספת שיוך רב
+          חדש</h4>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+          <div class="input-field-group" style="margin-bottom: 0;">
+            <label for="inputOrigAgentName" style="font-size: 0.82rem; font-weight: 700;">שם מקורי של נציג:</label>
+            <input type="text" id="inputOrigAgentName" class="modal-input" placeholder="לדוגמה: יונתן פריאנטה"
+              list="agentsSuggestionsList">
+            <datalist id="agentsSuggestionsList"></datalist>
+          </div>
+          <div class="input-field-group" style="margin-bottom: 0;">
+            <label for="inputRabbiName" style="font-size: 0.82rem; font-weight: 700;">שם הרב לתצוגה:</label>
+            <input type="text" id="inputRabbiName" class="modal-input" placeholder="לדוגמה: הרב יונתן פריאנטה שליט״א">
+          </div>
+        </div>
+        <button id="btnAddRabbi" class="btn btn-cyan" style="width: 100%; justify-content: center; font-size: 0.9rem;">
+          הוסף לרשימת הרבנים
+        </button>
+      </div>
+
+      <!-- Current Configured Rabbis List -->
+      <h4 style="margin: 0 0 10px; font-size: 0.92rem; color: var(--text-secondary); font-weight: 800;">📋 רשימת הרבנים
+        המוגדרים:</h4>
+      <div id="rabbisListContainer"
+        style="max-height: 220px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; padding-right: 4px;">
+        <!-- Injected dynamically by JS -->
+      </div>
+
+      <div
+        style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-light); padding-top: 14px;">
+        <span id="rabbisStatusNotice" style="font-size: 0.85rem; color: var(--text-muted);"></span>
+        <button id="btnCloseRabbisModal2" class="btn btn-secondary">סגור</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toastBar" class="toast-notice">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      style="color: #38b6ff;">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span id="toastBarText">הנתונים מעודכנים</span>
+  </div>
+
+  <!-- ADMIN WING MODAL -->
+  <div id="adminWingModal" class="modal-overlay">
+    <div class="modal-window admin-wing-modal-window">
+      <div class="modal-header" style="align-items: center; position: relative; flex-wrap: wrap; gap: 12px;">
+        <div style="display:flex;align-items:center;gap:12px; cursor: pointer;" id="adminWingHeaderTitleBlock"
+          onclick="showAdminWingPortal()" title="חזור למסך הבחירה הראשי">
+          <div
+            style="background:linear-gradient(135deg,#0e2a47,#0284c7);width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center; flex-shrink: 0;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+              <path d="M2 17l10 5 10-5"></path>
+              <path d="M2 12l10 5 10-5"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 id="adminWingTitle" style="margin:0; transition: color 0.2s ease;">אגף מנהל · שיעורים ודירות</h3>
+            <p id="adminWingSubTitle" style="margin:0;font-size:0.8rem;color:var(--text-muted);font-weight:500;">מעקב
+              וחלוקת תומכים לפי שיעורים ודירות</p>
+          </div>
+        </div>
+
+        <!-- Header Actions: Change Password & 80% Personal Target Alert Area -->
+        <div style="display:flex;align-items:center;gap:10px;margin-right:auto;">
+          <button id="btnAdminChangePasswordTrigger" type="button" class="portal-password-action-btn"
+            title="שינוי סיסמת מנהל">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <span>שינוי סיסמה</span>
+          </button>
+        </div>
+
+        <!-- 80% Personal Target Alert Area (Left side of header next to close button) -->
+        <div id="adminWingAlertContainer" class="admin-wing-alert-container">
+          <!-- Dynamically populated if an agent crossed 80% of personal target -->
+        </div>
+
+        <button id="btnCloseAdminWing" class="close-btn" aria-label="סגור">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- PORTAL SELECTION VIEW (SCREEN 1) -->
+      <div id="adminWingPortalScreen" class="admin-wing-portal-screen">
+        <div class="portal-welcome-box">
+          <h2 class="portal-welcome-title">ברוך הבא לאגף מנהל</h2>
+          <p class="portal-welcome-sub">בחר את התצוגה המבוקשת לניהול ומעקב אחר תומכים ונציגים בקמפיין</p>
+        </div>
+
+        <div class="portal-cards-grid">
+          <!-- Card 1: Classes -->
+          <div class="portal-choice-card portal-card-classes" onclick="openAdminWingSection('classes')">
+            <div class="portal-card-icon-wrap" style="background: linear-gradient(135deg, #0e2a47, #0284c7);">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                <path d="M2 17l10 5 10-5"></path>
+                <path d="M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+            <h3 class="portal-card-title">רשימת שיעורים</h3>
+            <p class="portal-card-desc">חלוקת תלמידים ונציגים לפי שיעור (כיתה מוסד ראשי), שיוך אישי ומעקב תומכים לפי
+              כיתה</p>
+            <div class="portal-card-btn">
+              <span>כניסה לשיעורים</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Card 2: Apartments -->
+          <div class="portal-choice-card portal-card-apartments" onclick="openAdminWingSection('apartments')">
+            <div class="portal-card-icon-wrap" style="background: linear-gradient(135deg, #047857, #10b981);">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+            </div>
+            <h3 class="portal-card-title">רשימת דירות</h3>
+            <p class="portal-card-desc">חלוקת נציגים לפי דירות ומגורים, סידור אוטומטי מקובץ הדירות המעודכן ואפשרות שינוי
+              ושיוך דירה לכל נציג</p>
+            <div class="portal-card-btn" style="background: #047857; color: white;">
+              <span>כניסה לדירות</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- QUICK SYSTEM TOOLS & SETTINGS SECTION (Moved inside Admin Wing portal) -->
+        <div class="portal-tools-section">
+          <div class="portal-tools-header">
+            <span class="portal-tools-title">כלים מהירים והגדרות מערכת</span>
+          </div>
+
+          <div class="portal-mini-tools-grid">
+            <!-- Fullscreen -->
+            <button id="btnToggleFullscreen" class="portal-mini-tool-btn" type="button"
+              title="מסך מלא (הסתר שורת משימות וכרטיסיות)">
+              <svg id="fullscreenIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3">
+                </path>
+              </svg>
+              <span>מסך מלא</span>
+            </button>
+
+            <!-- Edit Targets -->
+            <button id="btnEditTargets" class="portal-mini-tool-btn" type="button" title="עריכת יעדי נציגים ושיעורים">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="6"></circle>
+                <circle cx="12" cy="12" r="2"></circle>
+              </svg>
+              <span>עריכת יעדים</span>
+            </button>
+
+            <!-- Customize Columns -->
+            <button id="btnCustomizeColumns" class="portal-mini-tool-btn" type="button"
+              title="בחירת עמודות ושדות לתצוגה">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="9" y1="3" x2="9" y2="21"></line>
+                <line x1="15" y1="3" x2="15" y2="21"></line>
+              </svg>
+              <span>שדות לתצוגה</span>
+            </button>
+
+            <!-- Rabbis Mapping -->
+            <button id="btnManageRabbis" class="portal-mini-tool-btn" type="button" title="ניהול רבנים פעילים">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              <span>רבנים פעילים</span>
+            </button>
+
+            <!-- Sync Now -->
+            <button id="btnSyncNow" class="portal-mini-tool-btn portal-sync-btn" type="button"
+              title="סנכרון נתונים מהשרת עכשיו">
+              <svg id="syncIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.5">
+                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
+              </svg>
+              <span id="syncText">סנכרון נתונים</span>
+            </button>
+
+            <!-- Refresh Cookie -->
+            <button id="btnRefreshCookie" class="portal-mini-tool-btn" type="button"
+              title="עדכון חיבור לאדמין קול תורה">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="7.5" cy="15.5" r="5.5"></circle>
+                <path d="M21 2l-9.6 9.6"></path>
+                <path d="M15.5 7.5l3 3"></path>
+              </svg>
+              <span>חיבור לאדמין</span>
+            </button>
+
+            <!-- Test Sound -->
+            <button id="btnTestSound" class="portal-mini-tool-btn" type="button" title="בדיקת צלילים והתראות קוליות">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+              </svg>
+              <span>בדיקת צלילים</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- DETAILS VIEW (SCREEN 2) -->
+      <div id="adminWingDetailsScreen" class="admin-wing-details-screen"
+        style="display: none; flex-direction: column; flex: 1; overflow: hidden;">
+        <!-- SCROLLABLE BODY -->
+        <div class="modal-body-scroll">
+          <!-- Back button + Navigation tabs -->
+          <div
+            style="display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 14px; flex-wrap: wrap;">
+            <button class="portal-back-btn" onclick="showAdminWingPortal()" type="button">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+              <span>חזרה לבחירה הראשית</span>
+            </button>
+
+            <!-- Admin Wing Navigation Tabs: רשימת שיעורים | רשימת דירות -->
+            <div class="admin-wing-nav-tabs" style="margin-bottom: 0;">
+              <button id="tabBtnAdminClasses" class="admin-nav-tab active" type="button"
+                onclick="switchAdminWingTab('classes')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                  <path d="M2 17l10 5 10-5"></path>
+                  <path d="M2 12l10 5 10-5"></path>
+                </svg>
+                רשימת שיעורים
+              </button>
+              <button id="tabBtnAdminApartments" class="admin-nav-tab" type="button"
+                onclick="switchAdminWingTab('apartments')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                רשימת דירות
+              </button>
+            </div>
+          </div>
+
+          <!-- Summary cards row -->
+          <div id="adminWingSummaryCards"
+            style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin-bottom:18px;">
+          </div>
+
+          <!-- Search -->
+          <div style="position:relative;margin-bottom:14px;">
+            <input type="text" id="adminWingSearch" class="modal-input" placeholder="🔍 חיפוש נציג או שיעור..."
+              style="padding:8px 14px;font-size:0.88rem;width:100%;box-sizing:border-box;border-radius:8px;">
+          </div>
+
+          <!-- Class breakdown table -->
+          <div id="adminWingContent">
+            <!-- Dynamically rendered by JS -->
+          </div>
+        </div>
+        <!-- END SCROLLABLE BODY -->
+
+        <div class="modal-footer-fixed" style="display:flex;justify-content:space-between;align-items:center;gap:10px;">
+          <span id="adminWingMeta" style="font-size:0.82rem;color:var(--text-muted);"></span>
+          <button id="btnRefreshAdminWing" class="btn btn-primary" style="display:flex;align-items:center;gap:6px;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
+            </svg>
+            רענן נתונים
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ADMIN WING PASSWORD PROMPT MODAL -->
+  <div id="adminPasswordModal" class="modal-overlay">
+    <div class="modal-window admin-password-modal-window">
+      <div class="modal-header">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div class="admin-lock-icon-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 style="margin:0;font-size:1.15rem;color:var(--brand-navy);">כניסה לאגף מנהל</h3>
+            <p style="margin:0;font-size:0.8rem;color:var(--text-muted);">הזן סיסמת גישה למערכת הניהול</p>
+          </div>
+        </div>
+        <button id="btnCloseAdminPasswordModal" class="close-btn" aria-label="סגור">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="admin-password-modal-body">
+        <form id="adminPasswordForm" onsubmit="return false;" style="display:flex;flex-direction:column;gap:14px;">
+          <div>
+            <label for="adminPasswordInput" class="admin-field-label">סיסמת כניסה</label>
+            <div style="position:relative;">
+              <input type="password" id="adminPasswordInput" class="modal-input admin-password-input" placeholder="••••"
+                maxlength="30" autocomplete="current-password" autofocus>
+            </div>
+            <div id="adminPasswordError" class="admin-password-error" style="display:none;"></div>
+          </div>
+
+          <div style="display:flex;gap:10px;margin-top:6px;">
+            <button id="btnSubmitAdminPassword" type="submit" class="btn btn-primary"
+              style="flex:1;padding:11px;font-size:0.95rem;font-weight:800;">
+              כניסה לאגף מנהל
+            </button>
+            <button id="btnCancelAdminPassword" type="button" class="btn btn-secondary" style="padding:11px 18px;">
+              ביטול
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMIN CHANGE PASSWORD MODAL -->
+  <div id="adminChangePasswordModal" class="modal-overlay">
+    <div class="modal-window admin-password-modal-window">
+      <div class="modal-header">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div class="admin-lock-icon-badge" style="background:#eff6ff;color:#0284c7;border-color:#bfdbfe;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M21 2l-9.6 9.6"></path>
+              <circle cx="7.5" cy="15.5" r="5.5"></circle>
+              <path d="M15.5 7.5l3 3"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 style="margin:0;font-size:1.15rem;color:var(--brand-navy);">שינוי סיסמת מנהל</h3>
+            <p style="margin:0;font-size:0.8rem;color:var(--text-muted);">החלפת סיסמת הגישה לאגף מנהל</p>
+          </div>
+        </div>
+        <button id="btnCloseAdminChangePasswordModal" class="close-btn" aria-label="סגור">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="admin-password-modal-body">
+        <form id="adminChangePasswordForm" onsubmit="return false;"
+          style="display:flex;flex-direction:column;gap:14px;">
+          <!-- Step 1: Current Password -->
+          <div id="changePasswordStepCurrent">
+            <label for="adminCurrentPasswordInput" class="admin-field-label">סיסמה נוכחית</label>
+            <input type="password" id="adminCurrentPasswordInput" class="modal-input admin-password-input"
+              placeholder="הקלד סיסמה נוכחית..." autocomplete="current-password">
+            <div id="adminCurrentPasswordError" class="admin-password-error" style="display:none;"></div>
+            <button id="btnVerifyCurrentPassword" type="button" class="btn btn-primary"
+              style="width:100%;margin-top:12px;padding:10px;font-size:0.92rem;font-weight:800;">
+              המשך להגדרת סיסמה חדשה
+            </button>
+          </div>
+
+          <!-- Step 2: New Password + Confirm (Shown after current password verified) -->
+          <div id="changePasswordStepNew" style="display:none;flex-direction:column;gap:12px;">
+            <div
+              style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:8px 12px;font-size:0.82rem;color:#166534;font-weight:600;">
+              ✓ הסיסמה הנוכחית אומתה בהצלחה. הקלד כעת את הסיסמה החדשה:
+            </div>
+            <div>
+              <label for="adminNewPasswordInput" class="admin-field-label">סיסמה חדשה</label>
+              <input type="password" id="adminNewPasswordInput" class="modal-input admin-password-input"
+                placeholder="הקלד סיסמה חדשה..." autocomplete="new-password">
+            </div>
+            <div>
+              <label for="adminConfirmPasswordInput" class="admin-field-label">אימות סיסמה חדשה</label>
+              <input type="password" id="adminConfirmPasswordInput" class="modal-input admin-password-input"
+                placeholder="הקלד שוב לאימות..." autocomplete="new-password">
+            </div>
+            <div id="adminNewPasswordError" class="admin-password-error" style="display:none;"></div>
+
+            <div style="display:flex;gap:10px;margin-top:6px;">
+              <button id="btnSaveNewPassword" type="button" class="btn btn-primary"
+                style="flex:1;padding:11px;font-size:0.95rem;font-weight:800;">
+                אישור ועדכון סיסמה
+              </button>
+              <button id="btnCancelChangePassword" type="button" class="btn btn-secondary" style="padding:11px 18px;">
+                ביטול
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js?v=109"></script>
+  <script src="admin_wing.js?v=12"></script>
+</body>
+
+</html>

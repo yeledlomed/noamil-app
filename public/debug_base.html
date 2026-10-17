@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>נעם לישראל · חלוקת לידים</title>
+  <link rel="stylesheet" href="/admin/static/admin.css?v=43b22f18e7">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+
+<header class="top">
+  <span class="brand">חלוקת לידים</span>
+  <span class="account">
+    <span class="muted small ltr email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1c72737d71747d726972255c7b717d7570327f7371">[email&#160;protected]</a></span>
+    
+    <form method="post" action="/admin/logout" class="inline">
+      <input type="hidden" name="csrf_token" value="ggM9oBPPSv75-a7-bQEZtVkABUw_FfVJv3Tx9HotiLU">
+      <button class="link">יציאה</button>
+    </form>
+  </span>
+  
+  <nav aria-label="תפריט ראשי">
+    <a href="/admin" class="">לוח בקרה</a>
+    <a href="/admin/campaigns/new" class="">קמפיין חדש</a>
+    <a href="/admin/contacts" class="">אנשי קשר</a>
+    <a href="/admin/agents" class="">נציגים</a>
+    <a href="/admin/graphs" class="">גרפים</a>
+    <details class="dropdown">
+      <summary class="">עוד</summary>
+      <div class="panel">
+        <a href="/admin/dnc" class="">אל תתקשר</a>
+        <a href="/admin/jobs" class="">ייבוא וייצוא</a>
+        
+      </div>
+    </details>
+  </nav>
+</header>
+
+<main>
+  
+  
+  
+
+<p><a href="/admin">← לוח בקרה</a></p>
+<div class="row spread campaign-head">
+  <div>
+    <h1>נעם לישראל <span class="badge ok">פעיל</span></h1>
+    <p class="muted">הקבוצות שלך: <span class="badge group">מדברה כעדן</span> · רואים רק את הנציגים שלהן ואת מה שעשו</p>
+  </div>
+  
+</div>
+
+
+
+<nav class="tabs" aria-label="חלקי הקמפיין">
+  
+  
+  <a href="/admin/campaigns/15" class="active" aria-current=page>סקירה</a>
+  
+  
+  <a href="/admin/campaigns/15?tab=leads" class="" >אנשי קשר</a>
+  
+  
+  <a href="/admin/campaigns/15?tab=agents" class="" >נציגים</a>
+  
+</nav>
+
+
+
+
+
+
+<section class="card">
+  <h2>הנציגים שלך בקמפיין</h2>
+  <p class="muted small">רק הנציגים של הקבוצות שלך ומה שעשו בקמפיין.</p>
+</section>
+<div data-refresh="/admin/campaigns/15/_stats" data-every="10">
+  
+
+
+<section class="stats">
+  <div class="stat"><div class="label">נציגים</div><div class="value">192</div></div>
+  <div class="stat"><div class="label">פעלו בחצי השעה האחרונה</div><div class="value">145</div></div>
+  <div class="stat"><div class="label">מחזיקים ליד עכשיו</div><div class="value">125</div></div>
+  <div class="stat"><div class="label">שיחות היום</div><div class="value">2905</div></div>
+  <div class="stat"><div class="label">שיחות מתחילת הקמפיין</div><div class="value">3446</div></div>
+  <div class="stat"><div class="label">חזרות שהובטחו</div><div class="value">24</div></div>
+</section>
+
+<div class="grid">
+  <section class="card">
+    <div class="row spread">
+      <h2>תוצאות</h2>
+      <a href="/admin/campaigns/15?tab=leads&period=today" class="small">כל הדיווחים של היום ←</a>
+    </div>
+    
+    
+
+
+<table class="results">
+  <thead><tr><th>תוצאה</th><th></th><th class="num">סה״כ</th><th class="num"></th><th class="num">היום</th></tr></thead>
+  <tbody>
+  
+    
+    
+    <tr><td><a href="/admin/campaigns/15?tab=leads&amp;result=%D7%AA%D7%95%D7%9E%D7%9A">תומך</a></td>
+      <td class="result-bar"><svg class="minibar" viewBox="0 0 100 6" preserveAspectRatio="none" aria-hidden="true"><rect class="seg-track" x="0" y="0" width="100" height="6"></rect><rect class="bar-fill" x="97.24962630792227" y="0" width="2.7503736920777277" height="6"></rect></svg></td>
+      <td class="num">92</td>
+      <td class="num muted small">3%</td>
+      <td class="num"><a href="/admin/campaigns/15?tab=leads&amp;result=%D7%AA%D7%95%D7%9E%D7%9A&period=today">79</a></td></tr>
+  
+    
+    
+    <tr><td><a href="/admin/campaigns/15?tab=leads&amp;result=%D7%9C%D7%90%20%D7%AA%D7%95%D7%9E%D7%9A">לא תומך</a></td>
+      <td class="result-bar"><svg class="minibar" viewBox="0 0 100 6" preserveAspectRatio="none" aria-hidden="true"><rect class="seg-track" x="0" y="0" width="100" height="6"></rect><rect class="bar-fill" x="66.5171898355755" y="0" width="33.482810164424514" height="6"></rect></svg></td>
+      <td class="num">1120</td>
+      <td class="num muted small">33%</td>
+      <td class="num"><a href="/admin/campaigns/15?tab=leads&amp;result=%D7%9C%D7%90%20%D7%AA%D7%95%D7%9E%D7%9A&period=today">921</a></td></tr>
+  
+    
+    
+    <tr><td><a href="/admin/campaigns/15?tab=leads&amp;result=%D7%AA%D7%95%D7%9E%D7%9A%20%D7%90%D7%97%D7%95%D7%96%20%D7%97%D7%A1%D7%99%D7%9E%D7%94">תומך אחוז חסימה</a></td>
+      <td class="result-bar"><svg class="minibar" viewBox="0 0 100 6" preserveAspectRatio="none" aria-hidden="true"><rect class="seg-track" x="0" y="0" width="100" height="6"></rect><rect class="bar-fill" x="97.39910313901345" y="0" width="2.600896860986547" height="6"></rect></svg></td>
+      <td class="num">87</td>
+      <td class="num muted small">3%</td>
+      <td class="num"><a href="/admin/campaigns/15?tab=leads&amp;result=%D7%AA%D7%95%D7%9E%D7%9A%20%D7%90%D7%97%D7%95%D7%96%20%D7%97%D7%A1%D7%99%D7%9E%D7%94&period=today">65</a></td></tr>
+  
+    
+    
+    <tr><td><a href="/admin/campaigns/15?tab=leads&amp;result=%D7%90%D7%99%D7%9F%20%D7%9E%D7%A2%D7%A0%D7%94">אין מענה</a></td>
+      <td class="result-bar"><svg class="minibar" viewBox="0 0 100 6" preserveAspectRatio="none" aria-hidden="true"><rect class="seg-track" x="0" y="0" width="100" height="6"></rect><rect class="bar-fill" x="52.257100149476834" y="0" width="47.742899850523166" height="6"></rect></svg></td>
+      <td class="num">1597</td>
+      <td class="num muted small">48%</td>
+      <td class="num"><a href="/admin/campaigns/15?tab=leads&amp;result=%D7%90%D7%99%D7%9F%20%D7%9E%D7%A2%D7%A0%D7%94&period=today">1466</a></td></tr>
+  
+    
+    
+    <tr><td><a href="/admin/campaigns/15?tab=leads&amp;result=%D7%9E%D7%A1%D7%A4%D7%A8%20%D7%A9%D7%92%D7%95%D7%99">מספר שגוי</a></td>
+      <td class="result-bar"><svg class="minibar" viewBox="0 0 100 6" preserveAspectRatio="none" aria-hidden="true"><rect class="seg-track" x="0" y="0" width="100" height="6"></rect><rect class="bar-fill" x="95.48579970104633" y="0" width="4.5142002989536625" height="6"></rect></svg></td>
+      <td class="num">151</td>
+      <td class="num muted small">5%</td>
+      <td class="num"><a href="/admin/campaigns/15?tab=leads&amp;result=%D7%9E%D7%A1%D7%A4%D7%A8%20%D7%A9%D7%92%D7%95%D7%99&period=today">133</a></td></tr>
+  
+    
+    
+    <tr><td><a href="/admin/campaigns/15?tab=leads&amp;result=%D7%9C%D7%97%D7%96%D7%95%D7%A8">לחזור</a></td>
+      <td class="result-bar"><svg class="minibar" viewBox="0 0 100 6" preserveAspectRatio="none" aria-hidden="true"><rect class="seg-track" x="0" y="0" width="100" height="6"></rect><rect class="bar-fill" x="99.2526158445441" y="0" width="0.7473841554559043" height="6"></rect></svg></td>
+      <td class="num">25</td>
+      <td class="num muted small">1%</td>
+      <td class="num"><a href="/admin/campaigns/15?tab=leads&amp;result=%D7%9C%D7%97%D7%96%D7%95%D7%A8&period=today">24</a></td></tr>
+  
+    
+    
+    <tr><td><a href="/admin/campaigns/15?tab=leads&amp;result=%D7%9E%D7%AA%D7%9C%D7%91%D7%98">מתלבט</a></td>
+      <td class="result-bar"><svg class="minibar" viewBox="0 0 100 6" preserveAspectRatio="none" aria-hidden="true"><rect class="seg-track" x="0" y="0" width="100" height="6"></rect><rect class="bar-fill" x="97.21973094170403" y="0" width="2.780269058295964" height="6"></rect></svg></td>
+      <td class="num">93</td>
+      <td class="num muted small">3%</td>
+      <td class="num"><a href="/admin/campaigns/15?tab=leads&amp;result=%D7%9E%D7%AA%D7%9C%D7%91%D7%98&period=today">82</a></td></tr>
+  
+    
+    
+    <tr><td><a href="/admin/campaigns/15?tab=leads&amp;result=%D7%9C%D7%97%D7%96%D7%95%D7%A8%20%D7%A2%D7%95%D7%93%20%D7%A9%D7%91%D7%95%D7%A2">לחזור עוד שבוע</a></td>
+      <td class="result-bar"><svg class="minibar" viewBox="0 0 100 6" preserveAspectRatio="none" aria-hidden="true"><rect class="seg-track" x="0" y="0" width="100" height="6"></rect><rect class="bar-fill" x="98.38565022421524" y="0" width="1.6143497757847534" height="6"></rect></svg></td>
+      <td class="num">54</td>
+      <td class="num muted small">2%</td>
+      <td class="num"><a href="/admin/campaigns/15?tab=leads&amp;result=%D7%9C%D7%97%D7%96%D7%95%D7%A8%20%D7%A2%D7%95%D7%93%20%D7%A9%D7%91%D7%95%D7%A2&period=today">48</a></td></tr>
+  
+    
+    
+    <tr><td><a href="/admin/campaigns/15?tab=leads&amp;result=%D7%AA%D7%95%D7%9E%D7%9A%20%D7%95%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A2%D7%96%D7%95%D7%A8">תומך ורוצה לעזור</a></td>
+      <td class="result-bar"><svg class="minibar" viewBox="0 0 100 6" preserveAspectRatio="none" aria-hidden="true"><rect class="seg-track" x="0" y="0" width="100" height="6"></rect><rect class="bar-fill" x="99.94020926756353" y="0" width="0.059790732436472344" height="6"></rect></svg></td>
+      <td class="num">2</td>
+      <td class="num muted small">0%</td>
+      <td class="num"><a href="/admin/campaigns/15?tab=leads&amp;result=%D7%AA%D7%95%D7%9E%D7%9A%20%D7%95%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A2%D7%96%D7%95%D7%A8&period=today">2</a></td></tr>
+  
+  
+  
+    
+    <tr><td><a href="/admin/campaigns/15?tab=leads&amp;result=%D7%98%D7%95%D7%A4%D7%9C%20%D7%91%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA%20%D7%90%D7%97%D7%A8%D7%AA">טופל במערכת אחרת</a> <span class="muted small">(שם קודם)</span></td>
+      <td class="result-bar"><svg class="minibar" viewBox="0 0 100 6" preserveAspectRatio="none" aria-hidden="true"><rect class="seg-track" x="0" y="0" width="100" height="6"></rect><rect class="bar-fill" x="96.32286995515695" y="0" width="3.6771300448430493" height="6"></rect></svg></td>
+      <td class="num">123</td>
+      <td class="num muted small">4%</td>
+      <td class="num"><a href="/admin/campaigns/15?tab=leads&amp;result=%D7%98%D7%95%D7%A4%D7%9C%20%D7%91%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA%20%D7%90%D7%97%D7%A8%D7%AA&period=today">85</a></td></tr>
+  
+    
+    <tr><td><a href="/admin/campaigns/15?tab=leads&amp;result=%D7%98%D7%95%D7%A4%D7%9C%20%D7%91%D7%A7%D7%9E%D7%A4%D7%99%D7%99%D7%9F%20%D7%90%D7%97%D7%A8">טופל בקמפיין אחר</a> <span class="muted small">(שם קודם)</span></td>
+      <td class="result-bar"><svg class="minibar" viewBox="0 0 100 6" preserveAspectRatio="none" aria-hidden="true"><rect class="seg-track" x="0" y="0" width="100" height="6"></rect><rect class="bar-fill" x="99.97010463378176" y="0" width="0.029895366218236172" height="6"></rect></svg></td>
+      <td class="num">1</td>
+      <td class="num muted small">0%</td>
+      <td class="num"><a href="/admin/campaigns/15?tab=leads&amp;result=%D7%98%D7%95%D7%A4%D7%9C%20%D7%91%D7%A7%D7%9E%D7%A4%D7%99%D7%99%D7%9F%20%D7%90%D7%97%D7%A8&period=today">1</a></td></tr>
+  
+  </tbody>
+</table>
+
+    <p class="hint">תוצאה נספרת לנציג האחרון שטיפל באיש הקשר. לחיצה על תוצאה מציגה את אנשי הקשר.</p>
+    
+  </section>
+  <section class="card">
+    <h2>12 השעות האחרונות</h2>
+    
+
+<table>
+  <thead><tr><th>שעה</th><th class="num">לידים שנשלחו</th><th class="num">דיווחים</th></tr></thead>
+  <tbody>
+  
+    <tr><td>17:00</td><td class="num">548</td><td class="num">521</td></tr>
+  
+    <tr><td>16:00</td><td class="num">2420</td><td class="num">2211</td></tr>
+  
+    <tr><td>15:00</td><td class="num">169</td><td class="num">122</td></tr>
+  
+    <tr><td>14:00</td><td class="num">40</td><td class="num">33</td></tr>
+  
+    <tr><td>13:00</td><td class="num">2</td><td class="num">0</td></tr>
+  
+    <tr><td>12:00</td><td class="num">6</td><td class="num">0</td></tr>
+  
+    <tr><td>11:00</td><td class="num">24</td><td class="num">17</td></tr>
+  
+    <tr><td>08:00</td><td class="num">2</td><td class="num">0</td></tr>
+  
+  </tbody>
+</table>
+
+
+  </section>
+</div>
+</div>
+<section class="card">
+  <div class="row spread">
+    <h2>צוותים ויעדים</h2>
+    <a href="/admin/campaigns/15/teams" class="small">ניהול הצוותים ←</a>
+  </div>
+  
+  <table class="teams-board">
+    <thead><tr><th>קבוצה</th><th>צוות</th><th class="num">נציגים</th><th>התקדמות</th></tr></thead>
+    <tbody>
+    
+      <tr><td><span class="badge group">מדברה כעדן</span></td>
+        <td><a href="/admin/campaigns/15/teams/1">שיעור א</a></td><td class="num">0</td>
+        <td class="goal-cell"><span class="small">0 תומכים · <span class="muted">אין יעד</span></span></td></tr>
+    
+    </tbody>
+  </table>
+  
+</section>
+
+<p><a href="/admin/campaigns/15?tab=agents">הנציגים שלך ←</a> · <a href="/admin/campaigns/15?tab=leads">אנשי הקשר שטיפלו בהם ←</a></p>
+
+
+</main>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/admin/static/admin.js?v=43b22f18e7" defer></script>
+</body>
+</html>
